@@ -1,9 +1,11 @@
 import express from 'express'
+import homeController from '../controllers/home_controller'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('Planti Planta Admin HomePage')
-})
+router.get('/', homeController.getHomeController )
+router.post('/', homeController.postHomeController )
+router.put('/', homeController.putHomeController )
+router.delete('/', homeController.deleteHomeController )
 
 export default router
