@@ -78,8 +78,7 @@ export async function seeding() {
         await seedPlants()
         await seedUsers()
         await seedBasket()
-        return { message: 'Database seeded successfully' };
     } catch (error) {
-        return { error: error };
+        console.error("Fail to seed: ", error)
     }
 }

@@ -7,7 +7,7 @@ const homeController = {
     getHomeController: async (req: Request, res: Response, next: NextFunction) => {
         try {
             const getHomeService = homeService.getHomeService()
-            res.status(200).send(getHomeService)
+            res.status(200).send(`<h1 style=color:green;font-family:sans-serif>${getHomeService}</h1>`)
         } catch (err) {
             res.status(500).send("Oups une erreur est survenue")
             console.error(`Error: ${err}`);
@@ -22,18 +22,16 @@ const homeController = {
         } catch (err) {
             res.status(500).send("Oups une erreur est survenue")
             console.error(`Error: ${err}`);
-            res.status(500)
         }
     },
 
     postHomeController: async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const postHomeService = homeService.postHomeService()
+            const postHomeService =  homeService.postHomeService()
             res.status(200).send(postHomeService)
         } catch (err) {
             res.status(500).send("Oups une erreur est survenue")
             console.error(`Error: ${err}`);
-            res.status(500)
         }
     },
 

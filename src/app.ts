@@ -21,6 +21,7 @@ try {
     console.error("Error when connectiong to the database: ", error)
 }
 
+app.use(express.json())
 app.use('/', routes)
 
 app.listen(port, () => {
