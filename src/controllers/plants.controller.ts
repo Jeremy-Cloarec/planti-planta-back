@@ -16,9 +16,8 @@ const plantsController = {
     },
 
     getPlant: async (req: Request, res: Response) => {
-        const { id } = req.params;
-
         try {
+            const { id } = req.params
             const plantsService = new PlantService()
             const getPlantService = await plantsService.getPlantService(id)
 
@@ -48,7 +47,7 @@ const plantsController = {
 
     postPlant: async (req: Request, res: Response) => {
         try {
-            const plant = req.body 
+            const plant = req.body
             console.log("plant controller", plant);
             const plantsService = new PlantService()
             const postPlantService = await plantsService.postPlantService(plant.title, plant.price, plant.quantity)
