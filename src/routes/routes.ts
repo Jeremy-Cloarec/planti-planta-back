@@ -21,4 +21,7 @@ router.put('/plants/:id', plantsController.putPlant )
 router.post('/plants', plantsController.postPlant)
 router.delete('/plants/:id', plantsController.deletePlant)
 
+// authentification
+
+
 export default router

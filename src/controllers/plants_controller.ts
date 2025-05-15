@@ -53,7 +53,7 @@ const plantsController = {
             const plantsService = new PlantService()
             const postPlantService = await plantsService.postPlantService(plant.title, plant.price, plant.quantity)
 
-            res.status(200).json(postPlantService)
+            res.status(201).json(postPlantService)
 
         } catch (error) {
             res.status(500).send(`Fail to post plants. Error:  ${error}`)
@@ -68,7 +68,7 @@ const plantsController = {
             const plantsService = new PlantService()
             const deletePlantService = await plantsService.deletePlantService(id)
 
-            res.status(200).json(deletePlantService)
+            res.status(201).json(deletePlantService)
 
         } catch (error) {
             res.status(500).send("Fail to get plants")
