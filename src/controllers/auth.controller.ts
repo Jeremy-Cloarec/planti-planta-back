@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import AuthService from "../services/auth_service";
+import AuthService from "../services/auth.service";
 
 const authController = {
     register: async (req: Request, res: Response) => {
@@ -9,7 +9,7 @@ const authController = {
             res.status(200).json(result)
 
         } catch (error) {
-            res.status(500).json({ error: `registration failed: ${error}` })
+            res.status(500).json({ error: `Registration failed: ${error}` })
         }
     },
 

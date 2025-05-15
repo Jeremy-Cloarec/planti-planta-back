@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import HomeService from "../services/home_service"
+import HomeService from "../services/home.service"
 
 const homeService = new HomeService()
 

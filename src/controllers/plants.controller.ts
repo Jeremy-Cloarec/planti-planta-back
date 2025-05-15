@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import PlantService from "../services/plants_service";
+import PlantService from "../services/plants.service";
 
 const plantsController = {
     getPlants: async (req: Request, res: Response) => {

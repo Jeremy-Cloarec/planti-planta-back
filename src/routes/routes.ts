@@ -1,8 +1,8 @@
 import express from 'express'
-import homeController from '../controllers/home_controller'
-import seedingController from '../controllers/seeding_controller'
-import plantsController from '../controllers/plants_controller'
-import authController from '../controllers/auth_controller'
+import homeController from '../controllers/home.controller'
+import seedingController from '../controllers/seeding.controller'
+import plantsController from '../controllers/plants.controller'
+import authController from '../controllers/auth.controller'
 
 const router = express.Router()
 
