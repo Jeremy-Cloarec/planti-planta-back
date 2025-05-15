@@ -2,6 +2,7 @@ import express from 'express'
 import homeController from '../controllers/home_controller'
 import seedingController from '../controllers/seeding_controller'
 import plantsController from '../controllers/plants_controller'
+import authController from '../controllers/auth_controller'
 
 const router = express.Router()
 
@@ -22,6 +23,7 @@ router.post('/plants', plantsController.postPlant)
 router.delete('/plants/:id', plantsController.deletePlant)
 
 // authentification
-
+router.post('/inscription', authController.register)
+router.post('/connexion', authController.login)
 
 export default router

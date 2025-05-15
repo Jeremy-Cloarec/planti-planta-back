@@ -1,19 +1,20 @@
 import bcrypt from 'bcrypt'
 import pool from '../db/connection'
 import jwt from 'jsonwebtoken'
+import { User } from '../db/definitions'
 
 const AuthService = {
-    register: async (email: string, password: string) => {
+    register: async (name:string, email: string, password: string) => {
         const hashedPassword = await bcrypt.hash(password, 10)
         const result = (await pool.query(
-            `INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email`,
-            [email, hashedPassword]
+            `INSERT INTO users (name, email, password, is_admin) VALUES ($1, $2, $3, $4) RETURNING id, name, email`,
+            [name, email, hashedPassword, false]
         )).rows[0]
         return result
     },
 
     login: async (email: string, password: string) => {
-        const user = (await pool.query(`SELECT * FROM users WHERE email = $1`, [email])).rows[0]
+        const user: User = (await pool.query(`SELECT * FROM users WHERE email = $1`, [email])).rows[0]        
 
         if (!user) throw new Error("User not found")
 
